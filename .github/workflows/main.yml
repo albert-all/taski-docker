@@ -154,14 +154,6 @@ jobs:
           # Тут вместо username должен быть ваш логин на Docker Hub
           tags: albertinam/taski_backend:latest
 
-name: Deploy Taski
-
-on:
-  push:
-    branches:
-      - main
-
-jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
