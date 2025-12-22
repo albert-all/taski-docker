@@ -192,7 +192,8 @@ jobs:
             # Перезапускает все контейнеры в Docker Compose
             sudo docker compose -f docker-compose.production.yml down
             sudo docker compose -f docker-compose.production.yml up -d
-            
+            sudo docker pull albertinam/taski_backend:latest
+
             sudo docker compose -f docker-compose.production.yml exec backend python3 manage.py migrate
             sudo docker compose -f docker-compose.production.yml exec backend python3 manage.py collectstatic
             sudo docker compose -f docker-compose.production.yml exec backend cp -r /app/collected_static/. /backend_static/static/ 
